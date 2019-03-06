@@ -16,31 +16,47 @@ class App extends Component {
     .catch(err => console.error(err))
   }
 
-  handleChanges = e => {
+  handleChangesInput = e => {
     const { text } = this.state;
-    console.log("The handleChange() function was triggered!");
+    console.log("The handleChangesInput() function was triggered!");
     e.preventDefault();
     this.setState({ text: {...text, recipient: e.target.value}});
+  }
+
+  handleChangesTextarea = e => {
+    const { text } = this.state;
+    console.log("The handleChangesTextarea() function was triggered!");
+    e.preventDefault();
+    this.setState({ text: {...text, textmessage: e.target.value}});
   }
 
   render() {
     return (
       <div className="App">
-        <h1 className="App-title">Welcome to Tico's<br/>*PROTOTYPE*<br/>Hooper Texting App!</h1>
+        <h1 className="App-title">Welcome to Tico's *PROTOTYPE*<br/>Hooper Texting App!</h1>
         <div className="App-content">
-          <h2>Send the "Bat Signal"!</h2>
+          <h2>Send a "Bat Signal" Text!</h2>
           <div className="container-recipient">
             <label className="label-recipient">Recipient's Phone Number:</label>
             <input 
               className="input-recipient"
               type="text"
               value={this.state.text.recipient}
-              onChange={this.handleChanges}
+              onChange={this.handleChangesInput}
               placeholder="Phone Number"
             />
           </div>
-
-          <label>Message to</label>
+          <div className="container-message">
+            <label className="label-message">Message:</label>
+            <textarea 
+              className="text-area-message"
+              type="text"
+              value={this.state.text.textmessage}
+              onChange={this.handleChangesTextarea}
+              placeholder="Message"
+            />
+          </div>
+          <button>Send Text</button>
         </div>
       </div>
     );
