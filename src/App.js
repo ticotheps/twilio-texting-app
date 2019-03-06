@@ -56,7 +56,7 @@ class App extends Component {
               placeholder="Message"
             />
           </div>
-          <button>Send Text</button>
+          <button className="send-button">Send Text</button>
         </div>
       </div>
     );
