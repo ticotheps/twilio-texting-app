@@ -8,8 +8,8 @@ const twilio = require('twilio');
 
 
 // Twilio API requirements
-const accountSid = MY_ACC_SID;
-const authToken = MY_AUTH_TOKEN;
+const accountSid = process.env.MY_ACC_SID;
+const authToken = process.env.MY_AUTH_TOKEN;
 const client = (accountSid, authToken);
 
 const app = express(); // alias
