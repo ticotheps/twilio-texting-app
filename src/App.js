@@ -16,22 +16,29 @@ class App extends Component {
     .catch(err => console.error(err))
   }
 
+  handleChanges = e => {
+    console.log("The handleChange() function was triggered!");
+    e.preventDefault();
+
+  }
+
   render() {
-    const { text } = this.state;
-
-    const space = {
-      margin: 8
-    };
-
-    const textArea = {
-      borderRadius: 4
-    };
-
     return (
       <div className="App">
-        <h1 className="welcome-title">Welcome to Tico's Texting App!</h1>
-        <div>
+        <h1 className="App-title">Welcome to Tico's<br/>*PROTOTYPE*<br/>Hooper Texting App!</h1>
+        <div className="App-content">
+          <h2>Send the "Bat Signal"!</h2>
+          <div className="container-recipient">
+            <label className="label-recipient">Recipient's Phone Number</label>
+            <input 
+              className="input-recipient"
+              type="text"
+              value={this.state.text.recipient}
+              onChange={this.handleChanges}
+            />
+          </div>
 
+          <label>Message to</label>
         </div>
       </div>
     );
