@@ -29,7 +29,7 @@ app.get('/send-text', (req, res) => {
     // Send Text
     client.messages.create({
         body: textmessage,
-        to: recipient,
+        to: "+1" + recipient,
         from: '+19893490063' // from Twilio
     }).then((message) => console.log(message.body));
 })

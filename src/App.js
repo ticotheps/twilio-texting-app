@@ -9,13 +9,6 @@ class App extends Component {
     }
   };
 
-  sendText = _ => {
-    const { text } = this.state;
-    //pass variables within the query string
-    fetch(`http://localhost:4000/send-text?recipient=${text.recipient}&textmessage=${text.textmessage}`)
-    .catch(err => console.error(err))
-  }
-
   handleChangesInput = e => {
     const { text } = this.state;
     console.log("The handleChangesInput() function was triggered!");
@@ -30,9 +23,12 @@ class App extends Component {
     this.setState({ text: {...text, textmessage: e.target.value}});
   }
 
-  sendText = e => {
-    const { text } = this.state;
+  sendText = _ => {
     console.log("The sendText() function just fired off!");
+    const { text } = this.state;
+    //pass variables within the query string
+    fetch(`http://localhost:4000/send-text?recipient=${text.recipient}&textmessage=${text.textmessage}`)
+    .catch(err => console.error(err))
   }
 
   render() {
