@@ -10,7 +10,7 @@ const twilio = require('twilio');
 // Twilio API requirements
 const accountSid = process.env.MY_ACC_SID;
 const authToken = process.env.MY_AUTH_TOKEN;
-const client = (accountSid, authToken);
+const client = new twilio(accountSid, authToken);
 
 const app = express(); // alias
 
@@ -29,7 +29,7 @@ app.get('/send-text', (req, res) => {
     // Send Text
     client.messages.create({
         body: textmessage,
-        to: "+1" + recipient,
+        to: recipient,
         from: '+19893490063' // from Twilio
     }).then((message) => console.log(message.body));
 })
