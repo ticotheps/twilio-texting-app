@@ -8,19 +8,17 @@ html {
   font-size: 62.5%;
 }
 
-.App {
+.App-container {
   display: flex;
-  height: 900px;
+  padding-bottom: 20px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 3px solid red;
 }
 
 .App-title {
   text-align: center;
   font-size: 4.0rem;
-  border: 1px solid blue;
   margin: 10px 0;
 }
 
@@ -30,13 +28,27 @@ html {
   justify-content: flex-start;
   align-items: center;
   width: 75%;
-  height: 350px;
-  border: 1px solid green;
+  margin: 20px 0;
+  padding: 10px 0;
+  border: 2px solid darkgray;
+  border-radius: 10px;
 }
 
-.App-content h2 {
+.App-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.fa-basketball-ball, .fa-comments {
+  font-size: 6.2rem;
+}
+
+.App-heading {
+  text-align: center;
   font-size: 3.2rem;
-  border: 1px solid orange;
   margin: 20px 0;
 }
 
@@ -47,23 +59,21 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 1px solid darkviolet;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .label-recipient {
-  font-size: 1.8rem;
-  border: 1px solid yellow;
-  margin-right: 10px;
+  font-size: 2.2rem;
+  margin: 0 15px;
 }
 
 .input-recipient {
   width: 30%;
-  font-size: 1.6rem;
+  margin-right: 15px;
+  font-size: 2.0rem;
   height: 35px;
   border-radius: 5px;
   padding-left: 10px;
-  border: 1px solid hotpink;
 }
 
 .container-message {
@@ -72,18 +82,19 @@ html {
   justify-content: center;
   width: 100%;
   height: 100px;
-  border: 1px solid brown;
 }
 
 .label-message {
-  font-size: 1.8rem;
-  margin-right: 10px;
-  border: 1px solid orangered;
+  font-size: 2.2rem;
+  margin-left: 75px;
+  margin-right: 15px;
+  margin-top: 2px;
 }
 
 .text-area-message {
-  font-size: 1.6rem;
-  width: 50%;
+  font-size: 2.0rem;
+  width: 100%;
+  margin-right: 75px;
   height: 100px;
   border-radius: 5px;
   padding-left: 10px;
@@ -97,7 +108,7 @@ html {
   height: 30px;
   font-size: 1.8rem;
   font-weight: bolder;
-  margin: auto 0;
+  margin: 20px 0;
 }
 
 .send-button:hover {
