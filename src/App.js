@@ -17,9 +17,10 @@ class App extends Component {
   }
 
   handleChanges = e => {
+    const { text } = this.state;
     console.log("The handleChange() function was triggered!");
     e.preventDefault();
-
+    this.setState({ text: {...text, recipient: e.target.value}});
   }
 
   render() {
@@ -29,12 +30,13 @@ class App extends Component {
         <div className="App-content">
           <h2>Send the "Bat Signal"!</h2>
           <div className="container-recipient">
-            <label className="label-recipient">Recipient's Phone Number</label>
+            <label className="label-recipient">Recipient's Phone Number:</label>
             <input 
               className="input-recipient"
               type="text"
               value={this.state.text.recipient}
               onChange={this.handleChanges}
+              placeholder="Phone Number"
             />
           </div>
 
