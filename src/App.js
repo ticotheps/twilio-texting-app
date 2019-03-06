@@ -25,9 +25,14 @@ class App extends Component {
 
   handleChangesTextarea = e => {
     const { text } = this.state;
-    console.log("The handleChangesTextarea() function was triggered!");
+    console.log("The handleChangesTextarea() function was successful!");
     e.preventDefault();
     this.setState({ text: {...text, textmessage: e.target.value}});
+  }
+
+  sendText = e => {
+    const { text } = this.state;
+    console.log("The sendText() function just fired off!");
   }
 
   render() {
@@ -56,7 +61,12 @@ class App extends Component {
               placeholder="Message"
             />
           </div>
-          <button className="send-button">Send Text</button>
+          <button 
+            className="send-button"
+            onClick={this.sendText}
+          >
+            Send Text
+          </button>
         </div>
       </div>
     );
