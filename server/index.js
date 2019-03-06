@@ -15,3 +15,24 @@ const client = (accountSid, authToken);
 const app = express(); // alias
 
 app.use(cors()); // blocks the browser from restricting any data
+
+// Welcome page for the server
+app.get('/', (req, res) => {
+    res.send('Welcome to the Express Server')
+})
+
+// Twilio Text
+app.get('/send-text', (req, res) => {
+    // _GET Variables, passed via query string
+    const { recipient, textmessage } = req.query
+
+    // Send Text
+    client.messages.create({
+        body: textmessage,
+        to: recipient,
+        from: '' // from Twilio
+    })
+})
+
+// Must have nodemon installed, http://localhost:4000
+app.listen(4000, () => console.log("Running on Port 4000"));
