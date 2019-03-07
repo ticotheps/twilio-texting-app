@@ -41,22 +41,22 @@ class App extends Component {
   render() {
     return (
       <div className="App-container">
-        <h1 className="App-title">Welcome to Tico's *PROTOTYPE*<br/>Hoop Squad Texting App!</h1>
+        <h1 className="App-title">Tico's *PROTOTYPE* Hoop Squad Texting App!</h1>
         <div className="App-content">
-          <div className="App-header">
+          <h2 className="App-content-heading">Send a Text to the Lakers 6AM Hoop Squad from this App!</h2> 
+          <div className="App-images-container">         
             <i className="fas fa-basketball-ball"></i>
-            <h2 className="App-heading">Send a Text to the Hoop Squad from this App!</h2>
+            <div className="image-meme-container">
+              <img 
+                className="image-meme"
+                src="https://sayingimages.com/wp-content/uploads/group-texting-aint-nobody-got-time-for-that-text-meme.jpg" 
+                alt="'Ain't nobody got time for that' meme."
+              />
+            </div>            
             <i className="far fa-comments"></i>
           </div>
-          <div className="image-meme-container">
-            <img 
-              className="image-meme"
-              src="https://sayingimages.com/wp-content/uploads/group-texting-aint-nobody-got-time-for-that-text-meme.jpg" 
-              alt="'Ain't nobody got time for that' meme."
-            />
-          </div>
           <div className="container-recipient">
-            <label className="label-recipient">Hooper's Phone Number:</label>
+            <label className="label-recipient">Phone Number:</label>
             <input 
               className="input-recipient"
               type="text"
