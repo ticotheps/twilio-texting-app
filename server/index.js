@@ -1,10 +1,9 @@
 // Installed dependency for dotenv to hold environment variable
-var dotenv = require('dotenv');
+const dotenv = require('dotenv');
 
 // Install Dependencies with 'yarn add express cors twilio'
 const express = require('express');
 const cors = require('cors');
-const twilio = require('twilio');
 
 
 // Twilio API requirements
@@ -27,11 +26,13 @@ app.get('/send-text', (req, res) => {
     const { recipient, textmessage } = req.query
 
     // Send Text
-    client.messages.create({
-        body: textmessage,
-        to: recipient,
-        from: '+19893490063' // from Twilio
-    }).then((message) => console.log(message.body));
+    client.messages
+        .create({
+            body: textmessage,
+            from: '+19893490063', // from Twilio
+            to: recipient
+    })
+    .then(message => console.log(message.sid));``
 })
 
 // Must have nodemon installed, http://localhost:4000

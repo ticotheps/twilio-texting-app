@@ -8,8 +8,16 @@
     "express": "^4.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+<<<<<<< HEAD
     "react-scripts": "2.1.5",
     "twilio": "^3.29.1"
+||||||| merged common ancestors
+    "react-scripts": "2.1.5",
+    "twilio": "^3.29.0"
+=======
+    "react-scripts": "^2.1.8",
+    "twilio": "^3.29.1"
+>>>>>>> 1c2be54ce0896deb3fce5cdcf9babab9264f8473
   },
   "scripts": {
     "start": "react-scripts start",
