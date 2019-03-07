@@ -1,5 +1,5 @@
 // Installed dependency for dotenv to hold environment variable
-const dotenv = require('dotenv');
+var dotenv = require('dotenv');
 
 // Install Dependencies with 'yarn add express cors twilio'
 const express = require('express');
@@ -8,8 +8,8 @@ const twilio = require('twilio');
 
 
 // Twilio API requirements
-const accountSid = process.env.MY_ACC_SID;
-const authToken = process.env.MY_AUTH_TOKEN;
+const accountSid = TWILIO_ACCOUNT_SID;
+const authToken = TWILIO_AUTH_TOKEN;
 const client = new twilio(accountSid, authToken);
 
 const app = express(); // alias
