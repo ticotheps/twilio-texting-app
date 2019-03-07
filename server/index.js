@@ -7,8 +7,8 @@ const cors = require('cors');
 
 
 // Twilio API requirements
-const accountSid = TWILIO_ACCOUNT_SID;
-const authToken = TWILIO_AUTH_TOKEN;
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = new twilio(accountSid, authToken);
 
 const app = express(); // alias
