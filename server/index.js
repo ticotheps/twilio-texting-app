@@ -2,17 +2,17 @@
 const dotenv = require('dotenv');
 
 // Install Dependencies with 'yarn add express cors twilio'
-const express = require('express');
-const cors = require('cors');
-const twilio = require('twilio');
+var express = require('express');
+var cors = require('cors');
+var twilio = require('twilio');
 
 
 // Twilio API requirements
-const accountSid = process.env.MY_ACC_SID;
-const authToken = process.env.MY_AUTH_TOKEN;
-const client = new twilio(accountSid, authToken);
+var accountSid = process.env.MY_ACC_SID;
+var authToken = process.env.MY_AUTH_TOKEN;
+var client = new twilio(accountSid, authToken);
 
-const app = express(); // alias
+var app = express(); // alias
 
 app.use(cors()); // blocks the browser from restricting any data
 
@@ -31,7 +31,8 @@ app.get('/send-text', (req, res) => {
         body: textmessage,
         to: recipient,
         from: '+19893490063' // from Twilio
-    }).then((message) => console.log(message.body));
+    })
+    .then((message) => console.log(message.sid));
 })
 
 // Must have nodemon installed, http://localhost:4000
