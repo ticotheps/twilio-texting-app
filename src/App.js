@@ -27,7 +27,7 @@ class App extends Component {
     console.log("Your text message was sent successfully!");
     const { text } = this.state;
     //pass variables within the query string
-    fetch(`http://localhost:4000/send-text?recipient=${text.recipient}&textmessage=${text.textmessage}`)
+    fetch(`http://192.168.1.14:4000/send-text?recipient=${text.recipient}&textmessage=${text.textmessage}`)
     .catch(err => console.error(err));
 
     this.setState({
