@@ -32,7 +32,7 @@ app.get('/send-text', (req, res) => {
             from: '+19893490063', // from Twilio
             to: recipient
     })
-    .then(message => console.log(message.body));``
+    .then((message) => console.log(message.body));
 })
 
 // Must have nodemon installed, http://localhost:4000
