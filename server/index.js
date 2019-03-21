@@ -1,5 +1,5 @@
 // Installed dependency for dotenv to hold environment variable
-const dotenv = require('dotenv');
+require('dotenv').config();
 
 // Install Dependencies with 'yarn add express cors twilio'
 const express = require('express');
